@@ -44,9 +44,10 @@ $data = array(
 try{
     
     $d = $acsEps->createTovar( $data );
-    $d = $acsEps->printTovar( $d );
+    $v = $acsEps->printTovar( $d );
     
-    echo $d;
+    header("Content-type: application/pdf");
+    echo $v;
 
 } catch (Exception $e){
     print_r($e);
